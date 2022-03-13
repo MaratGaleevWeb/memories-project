@@ -1,0 +1,51 @@
+.post {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    max-height: 32px;
+    white-space: nowrap;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    margin-bottom: 6px;
+    max-height: 22px;
+}
+
+.likes {
+    line-height: 1.75;
+    margin-bottom: 6px;
+}
+
+.image {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.divider {
+    height: 1px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+    .posts {
+        flex-direction: column;
+    }
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 20px;
+    }
+}

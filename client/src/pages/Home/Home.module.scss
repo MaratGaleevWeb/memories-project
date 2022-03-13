@@ -1,0 +1,35 @@
+@use '../../styles/partials/mixins';
+.container {
+  display: flex;
+}
+
+.aside {
+  flex: 0 1 25%;
+  margin-left: 20px;
+}
+
+.appBarSearch {
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  @include mixins.shadow('medium');
+  div {
+    margin-bottom: 25px;
+  }
+}
+
+.searchButton {
+  @include mixins.button(#3f51b5);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .aside {
+    margin: 0 0 20px 0;
+  }
+}

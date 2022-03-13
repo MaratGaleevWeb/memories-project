@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500,700);
+//!VARIABLES======================================================================================================
+$fontFamily: 'Roboto', sans-serif;
+$fontSize: 16;
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1400;
+
+$mainColor: #000;
+
+body {
+    background-color: #f7f8fc;
+    font-family: $fontFamily;
+    color: $mainColor;
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+//!VARIABLES======================================================================================================

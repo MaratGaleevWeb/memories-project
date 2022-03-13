@@ -1,0 +1,85 @@
+@use '../../styles/partials/mixins';
+.appBar {
+    min-height: 84px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.shadow('medium');
+    @include mixins.adaptive-value('padding-left', 50, 15);
+    @include mixins.adaptive-value('padding-right', 50, 15);
+}
+
+.text {
+    height: 45px;
+}
+
+.logo {
+    margin: 5px 0 0 10px;
+    height: 40px;
+}
+
+.toolbar {
+    padding: 0 24px;
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purple {
+    min-width: 40px;
+    min-height: 40px;
+    color: #fff;
+    background-color: #673ab7;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    font-size: 20px;
+    text-align: center;
+}
+
+.brandContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logOut {
+    @include mixins.button(#f50057);
+}
+
+.logIn {
+    @include mixins.changeBackOnHover(#3f51b5, #303f9f);
+    @include mixins.ripple;
+    @include mixins.button(#3f51b5);
+}
+
+@media (max-width: 768px) {
+    .appBar {
+        flex-direction: column;
+    }
+    .toolbar {
+        width: auto;
+        padding: 0;
+        margin-top: 20px;
+    }
+    .profile {
+        width: auto;
+        justify-content: center;
+        gap: 10px;
+    }
+}

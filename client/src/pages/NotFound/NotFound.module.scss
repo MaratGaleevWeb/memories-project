@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins';
+
+.container {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: center;
+  @include mixins.shadow('deep');
+}
+
+.title {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 20px;
+}

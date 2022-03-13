@@ -1,0 +1,78 @@
+@use '../../styles/partials/mixins';
+
+.container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    @include mixins.shadow('deep');
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.content {
+    border-radius: 20px;
+    flex: 0 1 55%;
+}
+
+.title {
+    font-size: 48px;
+}
+
+.tags {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.message {
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.author {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.creation {
+    line-height: 1.5;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    button {
+        width: 20px;
+        border-radius: 4px;
+    }
+}
+
+.divider {
+    height: 1px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.mediaWrap {
+    flex: 0 1 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        border-radius: 20px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}

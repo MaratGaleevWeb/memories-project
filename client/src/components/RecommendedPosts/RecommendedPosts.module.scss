@@ -1,0 +1,26 @@
+.section {
+    flex: 1;
+}
+
+.also {
+    margin-top: 14px;
+    font-size: 24px;
+    line-height: 1.334;
+    margin-bottom: 6px;
+}
+
+.posts {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    li {
+        flex: 0 0 13%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+}

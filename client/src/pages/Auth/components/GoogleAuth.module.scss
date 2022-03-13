@@ -1,0 +1,12 @@
+@use '../../../styles/partials/mixins';
+.googleButton {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    @include mixins.button(#3f51b5, 100%);
+    svg {
+        height: 20px;
+    }
+}

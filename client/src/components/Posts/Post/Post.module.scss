@@ -1,0 +1,94 @@
+@use '../../../styles/partials/mixins';
+
+.card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 100%;
+    @include mixins.shadow('deep');
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.date {
+    font-size: 14px;
+}
+
+.icon {
+    svg {
+        height: 30px;
+        color: #fff;
+    }
+}
+
+.mediawrap {
+    padding-top: 56.25%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.info {
+    padding: 20px 18px 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    height: 40px;
+    line-height: 18px;
+    overflow: auto;
+}
+
+.tags,
+.text {
+    @include mixins.adaptive-value('margin-bottom', 20, 10);
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+}
+
+.title {
+    flex: 1;
+    font-size: 24px;
+    @include mixins.adaptive-value('margin-bottom', 28, 10);
+}
+
+.cardActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    button {
+        padding: 5px;
+        border-radius: 6px;
+        color: #3f51b5;
+        svg {
+            height: 20px;
+            position: relative;
+            top: 5px;
+        }
+        &:disabled {
+            color: rgba(0, 0, 0, 0.26);
+            cursor: default;
+        }
+    }
+}

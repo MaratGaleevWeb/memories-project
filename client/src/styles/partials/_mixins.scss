@@ -1,0 +1,70 @@
+@use 'variables';
+
+@mixin adaptive-value($property, $startSize, $minSize) {
+	$addSize: $startSize - $minSize;
+	#{$property}: $startSize + px;
+	@media (max-width: #{variables.$maxWidthContainer + px}) {
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} *
+				((100vw - 320px) / #{variables.$maxWidthContainer - 320})
+		);
+	}
+}
+
+@mixin ripple($color: #fff) {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	span {
+		position: absolute;
+		height: 500px;
+		width: 500px;
+		pointer-events: none;
+		background-color: $color;
+		border-radius: 50%;
+		animation: buttonAnimation 1s;
+	}
+	@keyframes buttonAnimation {
+		0% {
+			opacity: 0.5;
+			transform: translate(-50%, -50%) scale(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+}
+
+@mixin changeBackOnHover($defaultColor, $colorOnHover) {
+	transition: background-color 0.3s;
+	background-color: $defaultColor;
+	&:hover {
+		transition: background-color 0.3s;
+		background-color: $colorOnHover;
+	}
+}
+
+@mixin shadow($shadow) {
+	@if $shadow == 'light' {
+		box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%),
+			0px 1px 5px 0px rgb(0 0 0 / 12%);
+	} @else if $shadow == 'medium' {
+		box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%),
+			0px 1px 10px 0px rgb(0 0 0 / 12%);
+	} @else if $shadow == 'deep' {
+		box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
+			0px 1px 18px 0px rgb(0 0 0 / 12%);
+	}
+}
+
+@mixin button($defaultColor: inherit, $width: auto) {
+	width: $width;
+	text-transform: uppercase;
+	padding: 10px 16px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 4px;
+	background-color: $defaultColor;
+	@include shadow('light');
+}
